@@ -1,0 +1,12 @@
+{
+  "name": "React Test",
+  "short_name": "React Test",
+  "icons": [
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "gcm_sender_id": "YOUR GOOGLE CLOUD SENDER ID"
+}
