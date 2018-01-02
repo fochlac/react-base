@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --public dev.fochlac.com --hot --inline",
-    "test": "mocha-webpack --webpack-config webpack.config.mocha.js --include \"client/test/unittests/setup.js\" \"test/client/unittests/**/*.spec.jsx\"",
-    "test-ui": "mocha-webpack --webpack-config webpack.config.mocha.js --include \"client/test/uitests/setup.js\" \"test/client/uitests/**/*.spec.js\"",
+    "test": "mocha-webpack --webpack-config webpack.config.mocha.js --include \"client/tests/unittests/setup.js\" \"client/tests/unittests/**/*.spec.js*\"",
+    "test-ui": "mocha-webpack --webpack-config webpack.config.mocha.js --include \"client/tests/integrationstests/setup.js\" \"client/tests/integrationstests/**/*.spec.js\"",
     "build": "webpack -p",
     "build-dev": "webpack -d",
     "watch": "webpack -w"

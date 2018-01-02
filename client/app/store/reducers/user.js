@@ -1,4 +1,4 @@
-const users = (state = {}, action) => {
+const user = (state = {}, action) => {
     switch (action.type) {
         case 'SET_NAME':
             return Object.assign({}, state, {name: action.name});
@@ -8,4 +8,4 @@ const users = (state = {}, action) => {
     }
 }
 
-export default users;
+export default user;
