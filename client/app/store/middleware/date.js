@@ -1,4 +1,4 @@
-export const dateMiddleware = {getState, dispatch} => next => action => {
+export const dateMiddleware = ({getState, dispatch}) => next => action => {
     action.date = Date.now();
 
     if (action.status === "initialized") {
@@ -9,7 +9,7 @@ export const dateMiddleware = {getState, dispatch} => next => action => {
 	    	newAction.status = "completed";
 	    	newAction.data = res;
 
-	    	store.dispatch(newAction)
+	    	dispatch(newAction)
 	    })
 	    .catch((err) => {
 	    	let newAction = Object.assign({}, action);
@@ -17,14 +17,9 @@ export const dateMiddleware = {getState, dispatch} => next => action => {
 	    	newAction.status = "failure";
 	    	newAction.err = err;
 
-	    	store.dispatch(newAction)
+	    	dispatch(newAction)
 	    })
 
     }
     next(action);
-}
-
-store = {
-	dispatch: () => {}
-	getState: () => {}
 }

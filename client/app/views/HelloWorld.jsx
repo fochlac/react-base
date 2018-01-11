@@ -21,7 +21,7 @@ export class HelloWorld extends React.Component {
 
     render() {
         return (
-        	<DefaultPage>
+        	<DefaultPage title="Hallo Welt">
         		{
         			this.props.user.name
         			? <div>

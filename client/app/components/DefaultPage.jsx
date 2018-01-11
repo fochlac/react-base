@@ -5,18 +5,11 @@ export default class DefaultPage extends React.Component {
         super();
     }
 
-    submit() {
-        this.props.set_name(this.state.name);
-    }
-
-
     render() {
-        let id = parseInt(Date.now() * Math.random());
-
         return (
             <div className="DefaultPage" >
                 <div className="header">
-                    <h3>Hallo Welt - Beispiel</h3>
+                    <h3>{this.props.title}</h3>
                 </div>
                 <div className="body">
                     {this.props.children}
@@ -24,5 +17,4 @@ export default class DefaultPage extends React.Component {
             </div>
         );
     }
-
 };
