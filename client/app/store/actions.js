@@ -12,3 +12,8 @@ export const set_age = (age) => ({
   type: 'SET_AGE',
   age
 });
+
+export const set_data = (data) => ({
+  type: 'SET_USER_DATA',
+  userData: data
+});

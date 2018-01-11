@@ -6,6 +6,9 @@ const user = (state = {}, action) => {
         case 'SET_AGE':
             return Object.assign({}, state, {age: action.age});
 
+        case 'SET_USER_DATA':
+            return Object.assign({}, state, action.userData);
+
         default:
             return state;
     }
