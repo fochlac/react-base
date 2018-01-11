@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import delete_name from 'STORE/actions.js';
+import { delete_name } from 'STORE/actions.js';
 import { Link } from 'react-router-dom';
 import DefaultPage from 'COMP/DefaultPage.jsx';
 
