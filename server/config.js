@@ -1,4 +1,4 @@
-let root_dir = '/home/florianr/react-base',
+let root_dir = '/Users/bjornroddeck/Documents/epages/react-base',
     config = {
         root: root_dir,
         client: root_dir + '/dist/',

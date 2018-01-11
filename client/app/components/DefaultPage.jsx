@@ -7,6 +7,7 @@ export default class DefaultPage extends React.Component {
 
     submit() {
         this.props.set_name(this.state.name);
+        this.props.set_date(this.state.date);
     }
 
     render() {
@@ -23,5 +24,4 @@ export default class DefaultPage extends React.Component {
             </div>
         );
     }
-
 };

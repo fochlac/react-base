@@ -4,7 +4,8 @@ import { addActionId } from './middleware/addActionId.js';
 import { logMiddleware } from './middleware/logger.js';
 
 const defaultStore = window.defaultStore ? window.defaultStore : {
-    user: { }
+    user: { },
+    app: {step:'ONE'}
 };
 
 export function configureStore(initialState = {}) {
@@ -18,4 +19,3 @@ export function configureStore(initialState = {}) {
 };
 
 export const store = configureStore(defaultStore);
-
