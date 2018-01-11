@@ -9,7 +9,14 @@ export class HelloWorld extends React.Component {
     constructor(props) {
         super();
 
-        this.state = { }
+        this.state = {
+            test: '123',
+            test2: '321'
+        }
+    }
+
+    setTest() {
+        this.setState({test: '456'})
     }
 
     render() {
@@ -24,7 +31,7 @@ export class HelloWorld extends React.Component {
         			: <div>
         				<p>Oh, dich kenn ich noch nicht...</p>
         				<p>Wie ist denn dein Name?</p>
-        				<UserInput />
+        				<UserInput test={this.state.test} changeTest={this.setTest.bind(this)} />
         			</div>
         		}
         	</DefaultPage>

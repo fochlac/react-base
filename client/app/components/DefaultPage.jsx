@@ -9,6 +9,7 @@ export default class DefaultPage extends React.Component {
         this.props.set_name(this.state.name);
     }
 
+
     render() {
         let id = parseInt(Date.now() * Math.random());
 

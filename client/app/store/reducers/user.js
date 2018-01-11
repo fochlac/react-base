@@ -1,7 +1,11 @@
 const user = (state = {}, action) => {
     switch (action.type) {
         case 'SET_NAME':
-            return Object.assign({}, state, {name: action.name});
+	        if (action.status === "completed") {
+	        	let newUser = Object.assign({}, state[action.id], {name: action.name})
+	            return Object.assign({}, state, {[action.id]: newUser});
+	        }
+	        return state;
 
         default:
             return state;

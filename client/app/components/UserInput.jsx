@@ -17,6 +17,13 @@ export class UserInput extends React.Component {
         this.set = setter(this);
     }
 
+    shouldComponentRender(nextProps, nextState) {
+        if (this.state !== nextState) {
+            return true;
+        }
+        return false;
+    }
+
     submit() {
         this.props.set_name(this.state.name);
     }
@@ -38,7 +45,9 @@ export class UserInput extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => ({
-    user: state.user
+    user: state.user,
+    ...ownProps
+
 });
 
 export default connect(mapStateToProps, { set_name })(UserInput);
