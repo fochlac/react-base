@@ -11,16 +11,18 @@ export class Comment extends React.Component {
 
 
     render() {
+        const {comment} = this.props;
+
         return (
-            <div>
+            <div className="comment-wrapper">
+                {comment.text}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    user: state.user,
-    app: state.app,
+    comment: state.comments[ownProps.id],
 });
 
 export default connect(mapStateToProps, {})(Comment);

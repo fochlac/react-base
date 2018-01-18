@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { } from 'STORE/actions.js';
+import Post from 'COMP/Post.jsx';
 
 export class Timeline extends React.Component {
     constructor(props) {
@@ -9,17 +10,17 @@ export class Timeline extends React.Component {
         this.state = { }
     }
 
-
     render() {
         return (
             <div>
+                { Object.values(this.props.posts).map(post => <Post id={post.id} key={post.id}/>) }
             </div>
         );
     }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    user: state.user,
+    posts: state.posts,
     app: state.app,
 });
 
