@@ -15,7 +15,8 @@ export class Comment extends React.Component {
 
         return (
             <div className="comment-wrapper">
-                {comment.text}
+                <h3 className="comment-headline">{this.props.users[comment.user].name}</h3>
+                <p>{comment.text}</p>
             </div>
         );
     }
@@ -23,6 +24,7 @@ export class Comment extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     comment: state.comments[ownProps.id],
+    users: state.users
 });
 
 export default connect(mapStateToProps, {})(Comment);
