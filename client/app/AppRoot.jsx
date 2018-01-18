@@ -20,8 +20,6 @@ export class AppRoot extends React.Component {
     }
 
     render() {
-        console.log(this.props.app)
-
         return (<Router>
             <Switch>
                 { 
