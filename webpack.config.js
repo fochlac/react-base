@@ -109,7 +109,7 @@ module.exports = {
             APP:        path.resolve('./client/app'),
             COMP:       path.resolve('./client/app/components'),
             UTIL:       path.resolve('./client/app/utils'),
-            VIEW:       path.resolve('./client/app/views'),
+            VIEWS:       path.resolve('./client/app/views'),
             STORE:      path.resolve('./client/app/store'),
 
             /* set path to runtime for ServiceWorkerWebpackPlugin as variable to allow to mock it in tests */
