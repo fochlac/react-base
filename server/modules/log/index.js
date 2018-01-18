@@ -15,7 +15,7 @@
 **/
 
 module.exports = (level, ...message) => {
-    let now = getDate(),
+    let now = Date.now(),
         logMessage = now.day + ' - ' + now.time + ' - ' + level + ' - ' + message.map((item) => {
             let output;
 
