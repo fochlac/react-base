@@ -67,7 +67,7 @@ const defaultStore = window.defaultStore ? window.defaultStore : {
 		},
 	},
 	app: {
-		ĺogin: true,
+		login: true,
 	},
 	user: {
 		admin: true,
