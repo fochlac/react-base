@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { } from 'STORE/actions.js';
+import './Comment.less';
 
 export class Comment extends React.Component {
     constructor(props) {

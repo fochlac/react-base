@@ -1,31 +1,8 @@
 @import './variables.less';
 
-.post{
-    &-wrapper {
-        align: center;
-        border: solid 1px #000;
-        margin: 10px;
-        padding: 10px;
-    }
-}
-
-.comment{
-    &-wrapper {
-        align: center;
-        padding: 10px;
-        &:nth-child(odd) {
-            background: #f4f4f4;
-        }
-        &:nth-child(even) {
-            border: solid 1px #f4f4f4;
-        }
-    }
-
-    &-headline {
-        border-bottom: 1px solid #aaa;
-        padding: 0 0 5px;
-        margin: 0;
-        font-size: 14px;
-        font-family: Arial;
-    }
+body {
+  margin: 0;
+  font-size: @base-font-size;
+  font-family: @base-font-family;
+  background: #E1E2E1;
 }

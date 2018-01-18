@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { logout_user } from 'STORE/actions.js';
 import UserImage from 'COMP/UserImage.jsx';
 
+import './Topbar.less';
+
 export class Topbar extends React.Component {
     constructor(props) {
         super();
@@ -12,10 +14,10 @@ export class Topbar extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="topbar">
                 <UserImage/>
                 <span>Tweeter</span>
-                <span><i className="fa fa-cog" aria-hidden="true"></i> <a href="#" onClick={this.props.logout_user} ><i className="fa fa-sign-out" aria-hidden="true"></i></a></span>
+                <span><i className="fa fa-cog" aria-hidden="true"></i> <a href="#" className="fa fa-sign-out" onClick={this.props.logout_user} ></a></span>
             </div>
         );
     }
