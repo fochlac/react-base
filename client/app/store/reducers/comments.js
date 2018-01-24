@@ -9,6 +9,11 @@ const comments = (comments = {}, action) => {
                     id: action.id
                 },
             };
+        case 'UPDATE_COMMENT':
+            return {
+                ...comments,
+                [action.comment.id]: action.comment
+            };
         case 'DELETE_COMMENT':
             const updated_comments = Object.assign({}, comments);
             delete updated_comments[action.comment.id];

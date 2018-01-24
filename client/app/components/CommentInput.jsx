@@ -14,6 +14,10 @@ export class CommentInput extends React.Component {
         this.set = setter(this);
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.state.text !== nextState.text;
+    }
+
     submit() {
         if (this.state.text.length > 0) {
             this.props.add_comment({
