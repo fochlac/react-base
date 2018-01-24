@@ -1,8 +1,8 @@
-const user = (state = {}, action) => {
+const user = (user = {}, action) => {
     switch (action.type) {
 
         default:
-            return state;
+            return user;
     }
 }
 

@@ -1,14 +1,21 @@
-const posts = (state = {}, action) => {
+import { deleteFromArray } from 'UTIL/array.js';
+
+const posts = (posts = {}, action) => {
     switch (action.type) {
         case 'ADD_COMMENT':
-            var post = Object.assign({}, state[action.comment.post]);
+            var post = Object.assign({}, posts[action.comment.post]);
 
-            post.comments.push(action.comment_id);
+            post.comments.push(action.id);
 
-            return Object.assign({}, state, {[post.id]: post});
+            return {...posts, [post.id]: post};
+        case 'DELETE_COMMENT':
+            var post = Object.assign({}, posts[action.comment.post]);
 
+            deleteFromArray(post.comments, action.comment.id);
+
+            return {...posts, [post.id]: post};
         default:
-            return state;
+            return posts;
     }
 }
 

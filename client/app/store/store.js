@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers.js';
 import { logMiddleware } from './middleware/logger.js';
+import { timestamp } from './middleware/timestamp.js';
+import { api } from './middleware/api.js';
 
 const defaultStore = window.defaultStore ? window.defaultStore : {
 	users: {
@@ -82,7 +84,7 @@ export function configureStore(initialState = {}) {
         reducers,
         initialState,
         composeEnhancers(
-            applyMiddleware(logMiddleware)
+            applyMiddleware(api, timestamp, logMiddleware)
         )
     );
 

@@ -1,9 +1,9 @@
-const app = (state = {}, action) => {
+const app = (app = {}, action) => {
     switch (action.type) {
     	case 'LOGOUT_USER':
-    		return Object.assign({}, state, {login: false});
+    		return Object.assign({}, app, {login: false});
         default:
-            return state;
+            return app;
     }
 }
 
