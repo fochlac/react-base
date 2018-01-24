@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers.js';
 import { logMiddleware } from './middleware/logger.js';
 
@@ -76,11 +76,15 @@ const defaultStore = window.defaultStore ? window.defaultStore : {
 };
 
 export function configureStore(initialState = {}) {
-  const store = createStore(
-    reducers,
-    initialState,
-    applyMiddleware(logMiddleware)
-  );
+    // from: https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    const store = createStore(
+        reducers,
+        initialState,
+        composeEnhancers(
+            applyMiddleware(logMiddleware)
+        )
+    );
 
   return store;
 };
