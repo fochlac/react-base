@@ -6,7 +6,10 @@ export const api = store => next => action => {
     		headers: new Headers({
 			    'Content-Type': 'application/json'
 			}),
-    		body: JSON.stringify(action.api.body),
+    		body: JSON.stringify({
+    			...action.api.body,
+    			date: action.date
+    		}),
     		method: action.api.method
     	})
 		.then(res => res.json())

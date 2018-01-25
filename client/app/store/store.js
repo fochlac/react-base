@@ -26,7 +26,7 @@ export function configureStore(initialState = {}) {
         reducers,
         initialState,
         composeEnhancers(
-            applyMiddleware(actionId, api, timestamp, logMiddleware)
+            applyMiddleware(actionId, timestamp, api, logMiddleware)
         )
     );
 
