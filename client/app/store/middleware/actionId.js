@@ -1,4 +1,4 @@
-let id = 100;
+let id = 1;
 
 export const actionId = store => next => action => {
     if (!action.id) {

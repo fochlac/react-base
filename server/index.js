@@ -19,8 +19,6 @@ server.listen(server_port, server_ip_address, () => {
     console.log('listening on port '+ server_port);
 });
 
-global.riffraff = 'kunz';
-
 // middlewares to parse json and urlencoded requests, handle compression and prevent xss
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
@@ -41,9 +39,6 @@ app.use('/static/', express.static(global.client + ''));
 // exception for sw and manifest, needs to be in root
 app.use('/sw.js', express.static(global.client + 'sw.js'));
 app.use('/manifest.json', express.static(global.client + 'manifest.json'));
-app.get('/manifest.json', (req, res) => {
-    res.status(200).sendfile(global.client + 'manifest.json');
-});
 
 // if no route and no static content, redirect to index
 app.use('*', (req,res)=> {
@@ -51,8 +46,6 @@ app.use('*', (req,res)=> {
         if (err) {
             res.status(500).send();
         }
-
-        console.log(content);
 
         let file = content.replace('/**DEFAULTSTORE**/','window.defaultStore=' + JSON.stringify({
             ...storage.getAllCollections(),
@@ -65,7 +58,6 @@ app.use('*', (req,res)=> {
             }
         }));
 
-        console.log(file);
         res.status(200).send(file);
     });
 });
