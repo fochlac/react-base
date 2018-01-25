@@ -5,19 +5,12 @@
         display: flex;
         justify-content: space-between;
         align-items: stretch;
-
-        &:nth-child(odd) .comment-wrapper {
-            background: @bg-color;
-        }
-
-        &:nth-child(even) .comment-wrapper {
-            border-right: 1px solid @bg-color;
-        }
     }
 
     &-wrapper {
-      flex: auto;
-      margin-right: 19px;
+        flex: auto;
+        margin-right: 20px;
+        border-right: 1px solid @bg-color;
 
         > * {
           padding: @base-padding;
@@ -31,10 +24,10 @@
     &-headline {
         padding: 0 0 calc(~"@base-padding / 3");
         margin: 0;
-        display: flex;
-        justify-content: space-between;
+        background: @bg-color;
         &-user{
             font-size: 14px;
+            padding-left: 10px;
         }
     }
 
@@ -54,21 +47,22 @@
 
         &-date{
             position: relative;
-            top: 16px;
+            top: 10px;
             display: inline-block;
             font-size: 12px;
             font-weight: normal;
+            padding-left: 5px;
         }
 
         &::before {
             position: absolute;
-            top: 20px;
-            left: -28px;
+            top: 15px;
+            left: -25px;
             content: '';
             display: block;
             width: 0;
             height: 0;
-            border-width: 0 15px 15px;
+            border-width: 0 10px 15px;
             border-color: transparent transparent @bg-color transparent;
             border-style: solid;
             transform: rotate(90deg);
@@ -76,7 +70,7 @@
 
         &::after {
             position: absolute;
-            top: 23px;
+            top: 17px;
             left: -6px;
             display: inline-block;
             content: '';

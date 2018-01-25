@@ -38,6 +38,7 @@ export class Comment extends React.Component {
             <div className="comment-row">
                 <div className="comment-wrapper">
                     <h3 className="comment-headline">
+                        <span className="fa fa-comments-o"></span>
                         <span className="comment-headline-user">{users[comment.user].name}</span>
                     </h3>
 
