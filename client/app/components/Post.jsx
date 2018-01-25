@@ -14,7 +14,7 @@ export class Post extends React.Component {
     }
 
     render() {
-        const {post} = this.props;
+        const { post, submittingComment } = this.props;
 
         return (
             <div className="post-wrapper">
@@ -24,6 +24,9 @@ export class Post extends React.Component {
               </div>
               { post.comments.map(id => <Comment id={id} key={id}/>) }
               <CommentInput post_id={post.id} />
+              { submittingComment ? <div>
+                  <span className="fa fa-lg fa-spin fa-cog"></span>
+              </div> : null}
             </div>
         );
     }
@@ -31,6 +34,7 @@ export class Post extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     post: state.posts[ownProps.id],
+    submittingComment: state.app.submittingComment,
 });
 
 export default connect(mapStateToProps, {})(Post);

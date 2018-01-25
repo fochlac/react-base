@@ -1,14 +1,16 @@
 const comments = (comments = {}, action) => {
     switch (action.type) {
         case 'ADD_COMMENT':
-            return {
-                ...comments,
-                [action.id]: {
-                    ...action.comment,
-                    date: action.date,
-                    id: action.id
-                },
-            };
+            if (action.apiState === 'completed') {
+                return {
+                    ...comments,
+                    [action.data.id]: {
+                        ...action.data,
+                        date: action.date
+                    },
+                };
+            }
+            return comments;
         case 'UPDATE_COMMENT':
             return {
                 ...comments,

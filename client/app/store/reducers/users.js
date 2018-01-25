@@ -3,11 +3,14 @@ import { deleteFromArray } from 'UTIL/array.js';
 const users = (users = {}, action) => {
     switch (action.type) {
         case 'ADD_COMMENT':
-            var user = Object.assign({}, users[action.comment.user]);
+            if (action.apiState === 'completed') {
+                var user = Object.assign({}, users[action.data.user]);
 
-            user.comments.push(action.id);
+                user.comments.push(action.data.id);
 
-            return {...users, [user.id]: user};
+                return {...users, [user.id]: user};
+            }
+            return users;
         case 'DELETE_COMMENT':
             var user = Object.assign({}, users[action.comment.post]);
 

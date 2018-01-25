@@ -1,5 +1,11 @@
 export const add_comment = (comment) => ({
   type: 'ADD_COMMENT',
+  api: {
+  	url: '/api/comment',
+  	method: 'post',
+  	body: comment
+  },
+  apiState: 'initialized',
   comment
 });
 export const update_comment = (comment) => ({

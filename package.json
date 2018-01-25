@@ -17,6 +17,7 @@
     "body-parser": "^1.17.2",
     "compression": "^1.6.2",
     "crypto": "^1.0.1",
+    "deepcopy": "^0.6.3",
     "express": "^4.15.3",
     "jsonwebtoken": "^7.4.1",
     "mysql": "^2.13.0",

@@ -22,7 +22,7 @@ export class AppRoot extends React.Component {
     render() {
         return (<Router>
             <Switch>
-                { 
+                {
                   !this.props.app.login && <Route path="/" exact render={() => <Login />} />
                 }
                 <Route path="/" exact render={() => <Dashboard />} />
