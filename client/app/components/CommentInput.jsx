@@ -31,9 +31,11 @@ export class CommentInput extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="comment-input-wrapper">
                 <textarea className="comment-input" placeholder="Neuer Kommentar ..." value={this.state.text} onChange={this.set({field: 'text'})}/>
-                <button type="submit" onClick={this.submit.bind(this)}>Abschicken</button>
+                <div className="tools-align-right">
+                    <button className="button-submit" type="submit" onClick={this.submit.bind(this)}>Abschicken</button>
+                </div>
             </div>
         );
     }

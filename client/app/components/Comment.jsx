@@ -35,15 +35,19 @@ export class Comment extends React.Component {
         const {comment, users} = this.props;
 
         return (
-            <div className="comment-wrapper">
-                <h3 className="comment-headline">
-                    <span className="comment-headline-user">{users[comment.user].name}</span>
-                    <span className="comment-headline-date">{formatDateTime(comment.date)}</span>
-                </h3>
-                <div>
-                {this.state.editMode ? <textarea className="comment-edit-input" defaultValue={comment.text} onChange={this.set({field: 'text'})}/> : parseLineBreaks(comment.text)}
+            <div className="comment-row">
+                <div className="comment-wrapper">
+                    <h3 className="comment-headline">
+                        <span className="comment-headline-user">{users[comment.user].name}</span>
+                    </h3>
+
+                    {this.state.editMode ? <div className="tools-no-padding"><textarea className="comment-edit-input" defaultValue={comment.text} onChange={this.set({field: 'text'})}/></div> : <div>{parseLineBreaks(comment.text)}</div>}
+
+                    {comment.user === this.props.user.id ? <div className="comment-footer"><span className={this.state.editMode ? "fa fa-check" : " fa fa-pencil"} onClick={this.toggleEditMode.bind(this)} /><span className="fa fa-trash" onClick={this.deleteComment.bind(this)} /></div> : ''}
                 </div>
-                {comment.user === this.props.user.id ? <div className="comment-footer"><span className={this.state.editMode ? "fa fa-check" : " fa fa-pencil"} onClick={this.toggleEditMode.bind(this)} /><span className="fa fa-trash" onClick={this.deleteComment.bind(this)} /></div> : ''}
+                <div className="comment-timeline">
+                    <span className="comment-timeline-date">{formatDateTime(comment.date)}</span>
+                </div>
             </div>
         );
     }
