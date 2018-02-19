@@ -1,7 +1,7 @@
 {
-  "name": "foodplanner",
+  "name": "react test",
   "version": "0.0.1",
-  "description": "planner for cooking",
+  "description": "wireframe for react projects",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --public dev.fochlac.com --hot --inline",
