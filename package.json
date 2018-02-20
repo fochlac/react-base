@@ -1,10 +1,10 @@
 {
-  "name": "react test",
+  "name": "react_test",
   "version": "0.0.1",
   "description": "wireframe for react projects",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --public dev.fochlac.com --hot --inline",
+    "start": "webpack-dev-server --public localhost --hot --inline",
     "test": "mocha-webpack --webpack-config webpack.config.mocha.js --include \"client/test/unittests/setup.js\" \"test/client/unittests/**/*.spec.jsx\"",
     "test-ui": "mocha-webpack --webpack-config webpack.config.mocha.js --include \"client/test/uitests/setup.js\" \"test/client/uitests/**/*.spec.js\"",
     "build": "webpack -p",
