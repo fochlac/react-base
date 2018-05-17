@@ -4,15 +4,15 @@ export default class Login extends React.Component {
     constructor(props) {
         super();
 
-        this.state = { 
+        this.state = {
             username: props.currentUser || '',
             age: props.currentAge || ''
         }
     }
 
     render() {
-        const{username} = this.state
-        const{age} = this.state
+        const {username, age} = this.state
+
         return(
             <div className="login">
                 <input type="text" value={username} onChange={(evt) => this.setState({username: evt.target.value})}/> <br/>

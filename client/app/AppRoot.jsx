@@ -8,7 +8,7 @@ export default class App extends React.Component {
     constructor(props) {
         super();
 
-        this.state = { 
+        this.state = {
             currentPage: 'Home',
             currentUser: 'test',
             currentAge: 0,
@@ -21,7 +21,6 @@ export default class App extends React.Component {
     }
 
     onLogout(){
-        console.log('logged out');
         this.setState({
             currentUser: undefined
         })
@@ -50,10 +49,14 @@ export default class App extends React.Component {
             <div className="body">
                 <Topbar currentPage={currentPage} currentUser={currentUser}  currentAge={currentAge} onLogin={(name, age) => this.onLogin(name, age)}/>
 
-
-                {currentUser && Number.isInteger(+currentAge) && <button onClick={() => this.onLogout()}>Logout</button>}
-                
-                {currentUser && Number.isInteger(+currentAge) && <Body currentAdress={currentAdress} onSubmitAdress={(street, city) => this.onSubmitAdress(street, city)} />}
+                {
+                    currentUser && Number.isInteger(+currentAge)
+                    && <Body currentAdress={currentAdress} onSubmitAdress={(street, city) => this.onSubmitAdress(street, city)} />
+                }
+                {
+                    currentUser && Number.isInteger(+currentAge)
+                    && <button onClick={() => this.onLogout()}>Logout</button>
+                }
             </div>
         )
     }
