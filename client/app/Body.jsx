@@ -1,29 +1,40 @@
 import React from 'react';
-import Adress from './Adress.jsx'
+import Address from './Address.jsx';
+import { set_address } from 'STORE/actions.js';
+import { connect } from 'react-redux';
 
 import 'APP/BaseStyle.less';
 
-export default class Topbar extends React.Component {
+class Body extends React.Component {
     constructor(props) {
         super();
     }
 
     render() {
-        const {currentAdress, onSubmitAdress} = this.props
+        const {address, isAddressSet} = this.props
         return(
             <div className="body">
-                <h3>Adresse</h3>
+                <h3>Addresse</h3>
 
                 {
-                  currentAdress.currentStreet && currentAdress.currentCity
+                  isAddressSet
                   ? <div> 
-                    <p>Deine Straße {currentAdress.currentStreet}</p> 
-                    <p>Dein Stadt ist: {currentAdress.currentCity}</p> 
+                    <p>Deine Straße: {address.street}</p> 
+                    <p>Dein Stadt ist: {address.city}</p> 
                     </div> 
-                  : <Adress onSubmitAdress={onSubmitAdress}/>
+                  : <Address />
                   
                 }
             </div>
         )
     }
 }
+
+const mapStoreToProps = (store, ownProps) => {
+    return {
+        isAddressSet: store.user.address.street && store.user.address.city,
+        address: store.user.address,
+    }
+}
+
+export default connect(mapStoreToProps, {})(Body)

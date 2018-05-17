@@ -12,11 +12,17 @@ const defaultStore = {
 	}
  };
 
+ const logMiddleware = store => next => action => {
+	 console.log(store.getState(), action)
+
+	 next(action)
+ }
+
 export function configureStore(initialState = {}) {
   const store = createStore(
     reducers,
     initialState,
-    applyMiddleware()
+    applyMiddleware(logMiddleware)
   );
 
   return store;

@@ -1,19 +1,24 @@
 import React from 'react';
 import Login from './Login.jsx'
+import { logout } from 'STORE/actions.js'
+import { connect } from 'react-redux';
 
 import 'APP/BaseStyle.less';
 
-export default class Topbar extends React.Component {
+class Topbar extends React.Component {
 
     render() {
+        const {user, app, isLoggedIn} = this.props
+
         return(
             <div className="topbar">
-                <h3>{this.props.currentPage}</h3>
+                <h3>{app.currentPage}</h3>
                 {
-                  this.props.currentUser
+                  isLoggedIn
                   ? <div>
-                      <p>Hallo {this.props.currentUser}</p>
-                      <p>Dein Alter ist: {this.props.currentAge}</p>
+                      <p>Hallo {user.name}</p>
+                      <p>Dein Alter ist: {user.age}</p>
+                      <button onClick={() => this.props.logout()}>Logout</button>
                   </div>
                   : <Login onLogin={this.props.onLogin}/>
 
@@ -22,3 +27,13 @@ export default class Topbar extends React.Component {
         )
     }
 }
+
+const mapStoreToProps = (store, ownProps) => {
+    return {
+        isLoggedIn: store.user.name.length && Number.isInteger(store.user.age),
+        user: store.user,
+        app: store.app
+    }
+}
+
+export default connect(mapStoreToProps, { logout })(Topbar)
