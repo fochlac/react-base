@@ -3,12 +3,12 @@ import reducers from './reducers.js';
 
 const defaultStore = {
 	app: {
-		currentPage: ''
+		addingAddress: false
 	},
 	user: {
-		name: 'Superuser'
+		name: 'Superuser',
 		id: 1
-	}
+	},
 	contacts: {
 		1: {
 			name: 'Test Tester',

@@ -12,11 +12,6 @@ export const user = (user = {}, action) => {
                 age: '',
                 address: {}
             }
-        case 'SET_ADDRESS':
-            return {
-                ...user,
-                address: action.address
-            }
 		default:
 		 return user;
 	}

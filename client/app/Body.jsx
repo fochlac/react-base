@@ -2,6 +2,7 @@ import React from 'react';
 import Address from './Address.jsx';
 import { set_address } from 'STORE/actions.js';
 import { connect } from 'react-redux';
+import { addAddress } from 'STORE/actions.js'
 
 import 'APP/BaseStyle.less';
 
@@ -11,18 +12,12 @@ class Body extends React.Component {
     }
 
     render() {
-        const {address, isAddressSet} = this.props
         return(
             <div className="body">
-                <h3>Addresse</h3>
+               <button onClick={this.props.addAddress} >Adresse hinzufügen</button>
 
                 {
-                  isAddressSet
-                  ? <div> 
-                    <p>Deine Straße: {address.street}</p> 
-                    <p>Dein Stadt ist: {address.city}</p> 
-                    </div> 
-                  : <Address />
+                  this.props.app.addingAddress && <Address />
                   
                 }
             </div>
@@ -32,9 +27,8 @@ class Body extends React.Component {
 
 const mapStoreToProps = (store, ownProps) => {
     return {
-        isAddressSet: store.user.address.street && store.user.address.city,
-        address: store.user.address,
+        app: store.app
     }
 }
 
-export default connect(mapStoreToProps, {})(Body)
+export default connect(mapStoreToProps, {addAddress})(Body)

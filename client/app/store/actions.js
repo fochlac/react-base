@@ -12,9 +12,17 @@ export const login = ({age, name}) => {
     }
 }
 
-export const set_address = (address) => {
+export const set_address = (name, address, phone) => {
     return {
         type: 'SET_ADDRESS',
-        address
+        name,
+        address,
+        phone
+    }
+}
+
+export const addAddress = () => {
+    return {
+        type: 'ADD_ADDRESS',
     }
 }

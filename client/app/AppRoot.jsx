@@ -11,9 +11,10 @@ class App extends React.Component {
 
         return(
             <div className="body">
-                <Topbar/> {
-                    this.props.isLoggedIn && <Body/>
-                }
+                //<Topbar/>
+                 
+                <Body/>
+                
             </div>
         )
     }
