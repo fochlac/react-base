@@ -1,38 +1,60 @@
 import React from 'react';
-import {
-      BrowserRouter as Router,
-      Route,
-      Redirect,
-      Switch
-    } from 'react-router-dom';
 
 import 'APP/BaseStyle.less';
-import { initServiceWorker } from 'UTIL/serviceWorker.js';
+import Topbar from './Topbar.jsx';
+import Body from './Body.jsx';
 
 export default class App extends React.Component {
     constructor(props) {
         super();
 
-        this.state = { }
+        this.state = { 
+            currentPage: 'Home',
+            currentUser: 'test',
+            currentAge: 0,
+            currentAdress:{
+                currentStreet: '',
+                currentCity: ''
+            }
+        }
+
     }
 
-    componentWillMount() {}
-    componentDidMount() {
-        initServiceWorker();
+    onLogout(){
+        console.log('logged out');
+        this.setState({
+            currentUser: undefined
+        })
     }
-    componentWillUnmount() {}
 
-    componentWillReceiveProps() {}
-    shouldComponentUpdate() {}
-    componentWillUpdate() {}
-    componentDidUpdate() {}
+    onLogin(name, age){
+        this.setState({
+            currentUser: name,
+            currentAge: age
+        })
+    }
+
+    onSubmitAdress(street, city){
+        this.setState({
+            currentAdress:{
+                currentCity: city,
+                currentStreet: street
+            }
+        })
+    }
 
     render() {
-        return (<Router>
-            <Switch>
-                <Route path="/" exact render={() => <div></div>} />
-                <Redirect to="/" />
-            </Switch>
-        </Router>);
+        const {currentUser, currentPage, currentAge, currentAdress} = this.state
+
+        return(
+            <div className="body">
+                <Topbar currentPage={currentPage} currentUser={currentUser}  currentAge={currentAge} onLogin={(name, age) => this.onLogin(name, age)}/>
+
+
+                {currentUser && Number.isInteger(+currentAge) && <button onClick={() => this.onLogout()}>Logout</button>}
+                
+                {currentUser && Number.isInteger(+currentAge) && <Body currentAdress={currentAdress} onSubmitAdress={(street, city) => this.onSubmitAdress(street, city)} />}
+            </div>
+        )
     }
 }
