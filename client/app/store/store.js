@@ -3,17 +3,12 @@ import reducers from './reducers.js';
 
 const defaultStore = {
 	app: {
-		busy: false
+		currentPage: ''
 	},
-	products: {
-		1:{
-			name: 'testproduct1',
-			id: 1
-		},
-		2:{
-			name: 'testproduct2',
-			id: 2
-		}
+	user: {
+		name: '',
+		age: '',
+		address: {}
 	}
  };
 
