@@ -6,9 +6,28 @@ const defaultStore = {
 		currentPage: ''
 	},
 	user: {
-		name: '',
-		age: '',
-		address: {}
+		name: 'Superuser'
+		id: 1
+	}
+	contacts: {
+		1: {
+			name: 'Test Tester',
+			address: {
+				street: 'Teststreet 5',
+				city: '07743 London'
+			},
+			comments: [1],
+			phone: '01234/56789',
+		},
+	},
+	comments: {
+		1: {
+			text: 'Hallo Tester du bist doof',
+			date: 123456787412,
+			userId: 1,
+			userName: 'Superuser',
+			contactId: 1
+		}
 	}
  };
 
