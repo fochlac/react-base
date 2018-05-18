@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import Address from './Address';
-import AddressCard from './AddressCard';
+import React from "react";
+import { connect } from "react-redux";
+import Address from "./Address";
+import AddressCard from "./AddressCard";
 
 function sortfunction(sortby, a, b){
     switch(sortby){
@@ -31,7 +31,7 @@ class AddressList extends React.Component {
                     }).sort((a, b) => {
                         return sortfunction(sort, a, b)
                     }).map( contact => {
-                     return   <li><AddressCard contact={contact}/></li>
+                     return   <li key={contact.id}><AddressCard contact={contact}/></li>
                     })
                                         
                 }
@@ -47,4 +47,4 @@ const mapStoreToProps = (store, ownProps) => {
     }
 }
 
-export default connect(mapStoreToProps, {})(AddressList)
+export default connect(mapStoreToProps, {})(AddressList);

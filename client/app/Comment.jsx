@@ -3,14 +3,13 @@ import { connect } from 'react-redux';
 
 class Comment extends React.Component {
     render() {
-        const{comments} = this.props
-        const arrComments = Object.values(comments)
+        const{commentData} = this.props
         return(
             <div className="comment">
-                <ul>
-                    <li>commentData.userName</li>
-                    <li>commentData.text</li>
-                    <li>commentData.date</li>                     
+                <ul className="commentBody">
+                    <li className="userName">{commentData.userName}</li>
+                    <li className="commentText">{commentData.text}</li>
+                    <li className="date">{commentData.date}</li>                     
                 </ul>
             </div>
         );
