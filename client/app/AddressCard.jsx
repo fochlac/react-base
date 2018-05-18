@@ -10,8 +10,8 @@ class AddressCard extends React.Component {
         return(
             <div className="addressCard">
                 <div className="adressInfo">                
-                    <span>{contanct.address.city}</span>
-                    <span>{contanct.address.street}</span></div>
+                    <span>{contact.address.city}</span>
+                    <span>{contact.address.street}</span></div>
                     {contact.comments.length > 0 &&  <div><CommentsList /></div>}
             </div>
         )
