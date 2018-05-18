@@ -13,7 +13,7 @@ class Body extends React.Component {
   }
 
   render() {
-    const { isAddressList } = this.props;
+    const { isAddressListEmpty } = this.props;
     return (
       <div className="body">
         {this.props.app.addingAddress ? (
@@ -21,7 +21,7 @@ class Body extends React.Component {
         ) : (
           <button onClick={this.props.addAddress}>Adresse hinzufügen</button>
         )}
-        {isAddressList ? <AddressList /> : "address list not defined"}
+        {isAddressListEmpty ? <AddressList /> : "address list not defined"}
       </div>
     );
   }

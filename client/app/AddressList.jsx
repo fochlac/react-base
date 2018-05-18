@@ -7,12 +7,17 @@ class AddressList extends React.Component {
     render() {
         const{contacts} = this.props
         const arrContacts = Object.values(contacts)
+        console.log(arrContacts)
         return(
-            arrContacts.map((contact) => {
-                <ul className="AddressList">
-                    <li><AddressCard contact={contact}/></li>
-                </ul>                
-            })
+            <ul className="AddressList">
+                {
+                    arrContacts.map((contact) => { return (
+                        
+                            <li><AddressCard contact={contact}/></li>
+                         )               
+                    })
+                }
+            </ul>
         )
     }
 }
