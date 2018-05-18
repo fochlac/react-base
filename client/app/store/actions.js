@@ -26,3 +26,10 @@ export const addAddress = () => {
         type: 'ADD_ADDRESS',
     }
 }
+
+export const addComment = (comment) => {
+    return {
+        type: 'ADD_COMMENT',
+        comment
+    }
+}
