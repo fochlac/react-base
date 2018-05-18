@@ -23,6 +23,7 @@ export const contacts = (contacts = {}, action) => {
                 }
                 
             }
+        
 		default:
 		 return contacts;
 	}

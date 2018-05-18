@@ -3,7 +3,9 @@ import reducers from './reducers.js';
 
 const defaultStore = {
 	app: {
-		addingAddress: false
+		addingAddress: false,
+		filter: 	'',
+		sort:	'sortbyName'
 	},
 	user: {
 		name: 'Superuser',

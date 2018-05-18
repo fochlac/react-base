@@ -1,5 +1,6 @@
 import React from "react";
 import AddressList from "./AddressList.jsx";
+import SearchInput from "./Components/SearchInput.jsx";
 import Address from "./Address.jsx";
 import { set_address } from "STORE/actions.js";
 import { connect } from "react-redux";
@@ -16,6 +17,7 @@ class Body extends React.Component {
     const { isAddressListEmpty } = this.props;
     return (
       <div className="body">
+        <SearchInput />
         {this.props.app.addingAddress ? (
           <Address />
         ) : (

@@ -33,3 +33,11 @@ export const addComment = (comment) => {
         comment
     }
 }
+
+export const setFilter = (filter, sort) => {
+    return {
+        type: 'SET_FILTERSTRING',
+        filter,
+        sort
+    }
+}
