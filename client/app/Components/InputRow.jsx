@@ -12,8 +12,9 @@ export default class InputRow extends React.Component {
     }
 
     onChange(evt){
-    	this.setState({value: evt.target.value, inValid: !this.props.regex.test(evt.target.value)})
-    	this.props.onChange(evt.target.value)
+    	const inValid = !this.props.regex.test(evt.target.value)
+    	this.setState({value: evt.target.value, inValid: inValid})
+    	this.props.onChange(evt.target.value, inValid)
     }
 
     onBlur(evt){

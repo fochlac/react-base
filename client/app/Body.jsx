@@ -1,5 +1,6 @@
 import React from "react";
 import AddressList from "./AddressList.jsx";
+import Address from "./Address.jsx";
 import { set_address } from "STORE/actions.js";
 import { connect } from "react-redux";
 import { addAddress } from "STORE/actions.js";

@@ -15,7 +15,7 @@ class CommentsList extends React.Component {
         })}
         <div className="addComment">
             <input type="text"/>
-            <button onClick={}>add comment</button>
+            <button onClick={() => null }>add comment</button>
         </div>
       </ul>
     );
