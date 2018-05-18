@@ -5,14 +5,12 @@ export const contacts = (contacts = {}, action) => {
 
 			const ids = Object.keys(contacts)	
 			for (let i = 0; i <= ids.length; i++) {
-				console.log(i)
 				if (!ids.includes(i.toString())) {
-					console.log(i, ids)
 					id = i;
 				}
 			}
 
-			
+
             return {
             	...contacts,
 
