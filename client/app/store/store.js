@@ -41,11 +41,21 @@ const defaultStore = {
 	 next(action)
  }
 
+ const generateID = store => next => action => {
+	 const date = Date.now();
+	if (action.generateID) { 
+		action.generatedID = date;
+    }
+    console.log("action log")
+    console.log(store.getState(), action)
+	 next(action)
+ }
+
 export function configureStore(initialState = {}) {
   const store = createStore(
     reducers,
     initialState,
-    applyMiddleware(logMiddleware)
+    applyMiddleware(logMiddleware, generateID)
   );
 
   return store;

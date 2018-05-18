@@ -22,8 +22,19 @@ export const contacts = (contacts = {}, action) => {
                 	id,
                 }
                 
-            }
-        
+			}
+			
+		case 'ADD_COMMENT':
+			const contactId = action.comment.contactId
+			const comments = contacts[contactId].comments.concat([action.generatedID])
+			const contact = contacts[contactId]
+			return {
+				...contacts,
+				[contactId]: {
+					...contact,
+					comments: comments
+				}
+			}
 		default:
 		 return contacts;
 	}
