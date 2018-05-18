@@ -11,6 +11,7 @@ const defaultStore = {
 	},
 	contacts: {
 		1: {
+			id: 1,
 			name: 'Test Tester',
 			address: {
 				street: 'Teststreet 5',
@@ -22,6 +23,7 @@ const defaultStore = {
 	},
 	comments: {
 		1: {
+			id: 1,
 			text: 'Hallo Tester du bist doof',
 			date: 123456787412,
 			userId: 1,

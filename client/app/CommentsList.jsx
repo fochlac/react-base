@@ -12,7 +12,7 @@ class CommentsList extends React.Component {
   }
 
   render() {
-    const { comments, contact } = this.props;
+    const { comments, contactId } = this.props;
     const arrComments = Object.values(comments);
     return (
       <ul className="commentsList">
@@ -23,12 +23,12 @@ class CommentsList extends React.Component {
         })}
         <div className="addComment">
             <input type="text" onChange={(evt) => this.setState({commentText: evt.target.value})}/>
-            <button onClick={addComment({
+            <button onClick={() => addComment({
               text: this.state.commentText,
               date: new Date(),
               userId: 1,
               userName: 'Superuser',
-              contactId: contact.id
+              contactId: contactId
             })}>add comment</button>
         </div>
       </ul>
