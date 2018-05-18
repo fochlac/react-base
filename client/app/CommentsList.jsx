@@ -1,10 +1,18 @@
 import React from "react";
-//import { set_address } from 'STORE/actions.js';
+import { addComment } from 'STORE/actions.js';
 import { connect } from "react-redux";
 import Comment from './Comment'
 class CommentsList extends React.Component {
+  constructor(props) {
+    super()
+
+    this.state = {
+      commentText: ''
+    }
+  }
+
   render() {
-    const { comments } = this.props;
+    const { comments, contact } = this.props;
     const arrComments = Object.values(comments);
     return (
       <ul className="commentsList">
@@ -14,8 +22,14 @@ class CommentsList extends React.Component {
           </li>
         })}
         <div className="addComment">
-            <input type="text"/>
-            <button onClick={() => null }>add comment</button>
+            <input type="text" onChange={(evt) => this.setState({commentText: evt.target.value})}/>
+            <button onClick={addComment({
+              text: this.state.commentText,
+              date: new Date(),
+              userId: 1,
+              userName: 'Superuser',
+              contactId: contact.id
+            })}>add comment</button>
         </div>
       </ul>
     );
