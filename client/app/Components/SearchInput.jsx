@@ -30,7 +30,7 @@ class SearchInput extends React.Component {
         <input  type="text" onChange={(evt) => this.onChange(evt,'filter')}/>
         <select onChange={(evt) => this.onChange(evt, 'sort')} name="" id="">
             <option value="sortbyName">Name</option>
-            <option value="sortbyDate">Datum</option>
+            <option value="sortbyDate">Id</option>
             <option value="sortbyZip">Postleitzahl</option>
         </select>
       </div>

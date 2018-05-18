@@ -6,14 +6,17 @@ import AddressCard from "./AddressCard";
 function sortfunction(sortby, a, b){
     switch(sortby){
         case 'sortbyName':
-            a.name.localeCompare(b.name)
-            break
+            return a.name.localeCompare(b.name)
+            
         case 'sortbyDate':
-            +a.id - +b.id
-            break
-        case 'sortbyZip':
+            return +a.id - +b.id
 
-            break
+        case 'sortbyZip':
+            
+                var aZIP = a.address.city.split(" ");
+                var bZIP = b.address.city.split(" ");
+                console.log(aZIP)
+            return +aZIP[0] - +bZIP[0]
     }
 }
 
