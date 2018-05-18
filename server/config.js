@@ -1,4 +1,4 @@
-let root_dir = 'C:\\react-base',
+let root_dir = 'C:\\Users\\ogoranskyy\\Documents\\react-base',
     config = {
         client: root_dir + '/dist/',
         server: root_dir + '/server/',
