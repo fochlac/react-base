@@ -1,5 +1,4 @@
 import React from 'react';
-import { logout } from 'STORE/actions.js';
 import { set_address } from 'STORE/actions.js';
 import { connect } from 'react-redux';
 import InputRow from './Components/InputRow.jsx';

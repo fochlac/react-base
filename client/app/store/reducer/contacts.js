@@ -12,6 +12,7 @@ export const contacts = (contacts = {}, action) => {
 				}
 			}
 
+			
             return {
             	...contacts,
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import 'APP/BaseStyle.less';
-import Topbar from './Topbar.jsx';
+//import Topbar from './Topbar.jsx';
 import Body from './Body.jsx';
 
 class App extends React.Component {
@@ -11,8 +11,6 @@ class App extends React.Component {
 
         return(
             <div className="body">
-                //<Topbar/>
-                 
                 <Body/>
                 
             </div>

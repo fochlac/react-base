@@ -14,12 +14,10 @@ class Body extends React.Component {
     render() {
         return(
             <div className="body">
-               <button onClick={this.props.addAddress} >Adresse hinzufügen</button>
+               {
 
-                {
-                  this.props.app.addingAddress && <Address />
-                  
-                }
+                this.props.app.addingAddress ? <Address />:  <button onClick={this.props.addAddress} >Adresse hinzufügen</button>
+               }
             </div>
         )
     }
