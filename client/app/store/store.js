@@ -11,6 +11,7 @@ const defaultStore = {
 	},
 	contacts: {
 		1: {
+			id: 1,
 			name: 'Test Tester',
 			address: {
 				street: 'Teststreet 5',
