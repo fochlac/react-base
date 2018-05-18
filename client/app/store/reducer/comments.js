@@ -17,6 +17,7 @@ export const comments = (comments = {}, action) => {
 				...comments,
 
 				[id]: {
+					id,
 					text: action.text,
 					date: action.date,
 					userId: action.userId,

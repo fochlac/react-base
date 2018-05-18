@@ -30,10 +30,6 @@ export const addAddress = () => {
 export const addComment = (comment) => {
     return {
         type: 'ADD_COMMENT',
-        text: comment.text,
-        date: comment.date,
-        userId: comment.userId,
-        userName: comment.userName,
-        contactId: comment.contactId
+        comment
     }
 }

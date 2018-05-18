@@ -23,6 +23,7 @@ const defaultStore = {
 	},
 	comments: {
 		1: {
+			id: 1,
 			text: 'Hallo Tester du bist doof',
 			date: 123456787412,
 			userId: 1,

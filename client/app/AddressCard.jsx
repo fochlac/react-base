@@ -2,7 +2,6 @@ import React from 'react';
 import { set_address } from 'STORE/actions.js';
 import { connect } from 'react-redux';
 import CommentsList from './CommentsList';
-import { contacts } from './store/reducer/contacts';
 
 class AddressCard extends React.Component {
     render() {
