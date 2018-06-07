@@ -1,15 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
+import {
+      BrowserRouter as Router,
+      Route,
+      Redirect,
+      Switch
+    } from 'react-router-dom';
 
 import "APP/BaseStyle.less";
-//import Topbar from './Topbar.jsx';
-import Body from "./Body.jsx";
+import Topbar from './Components/Topbar.jsx';
+import Body from "./Components/Body.jsx";
 
 class App extends React.Component {
   render() {
+    const {isLogged} = this.props
     return (
-      <div className="body">
-        <Body />
+
+      <div className="test">
+       {this.props.app.isLogged ? 
+        <Body /> 
+        : <Topbar /> }
+         
       </div>
     );
   }
@@ -17,7 +28,7 @@ class App extends React.Component {
 
 const mapStoreToProps = (store, ownProps) => {
   return {
-    isLoggedIn: store.user.name.length && Number.isInteger(store.user.age)
+       app: store.app
   };
 };
 

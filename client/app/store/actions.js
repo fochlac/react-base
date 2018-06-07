@@ -4,11 +4,9 @@ export const logout = () => {
     }
 }
 
-export const login = ({age, name}) => {
+export const login = () => {
     return {
-        type: 'LOGIN',
-        age,
-        name
+        type: 'LOGIN'
     }
 }
 
@@ -40,5 +38,19 @@ export const setFilter = (filter, sort) => {
         type: 'SET_FILTERSTRING',
         filter,
         sort
+    }
+}
+
+export const showErrorMessage = (text) => {
+    return {
+        type: 'ERROR_MESSAGE',
+        text
+    }
+}
+
+export const deleteComment = (comment) => {
+    return {
+        type: 'DELETE_COMMENT',
+        comment
     }
 }

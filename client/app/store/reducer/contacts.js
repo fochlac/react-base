@@ -23,6 +23,23 @@ export const contacts = (contacts = {}, action) => {
                 }
                 
 			}
+		case 'DELETE_COMMENT':
+			let newContacts = {...contacts};
+			const contactsDelete = newContacts[action.comment.userId]
+			let found = contactsDelete.comments.indexOf(action.comment.id)
+			if (found > -1) {
+				contactsDelete.comments.splice(found, 1)
+				// delete newContacts.comments[action.id.toString()];
+
+			}
+
+			return{
+				...contacts,
+				[contactsDelete.id]: {
+					...contactsDelete,
+					comments : contactsDelete.comments
+				}
+			} 
 			
 		case 'ADD_COMMENT':
 			const contactId = action.comment.contactId

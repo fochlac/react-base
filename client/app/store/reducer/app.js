@@ -17,6 +17,23 @@ export const app = (app = {}, action) => {
         		filter: action.filter,
         		sort: 	action.sort
         	}
+        case 'LOGIN':  
+        	return{
+        		...app,
+        		isLogged: true,
+        		showErrorMessage: false
+        	}
+        case 'LOGOUT':
+        	return{
+        		...app,
+        		isLogged: false
+        	}
+    	case 'ERROR_MESSAGE':
+    	return{
+    		...app,
+    		showErrorMessage: true,
+    		text: action.text
+    	}
 		default:
 		 return app;
 	}
